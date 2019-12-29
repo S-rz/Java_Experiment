@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.15829145728643215" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.doctorcontroller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Label layoutX="247.0" layoutY="16.0" prefHeight="28.0" prefWidth="124.0" text="医生信息" textFill="#5c0a41">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="700.0">
+         <children>
+            <Button fx:id="button_exit" layoutX="511.0" layoutY="296.0" mnemonicParsing="false" onMouseClicked="#click_exit" text="退出">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <TabPane layoutY="-7.0" prefHeight="254.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="table_brlb" onSelectionChanged="#click_brlb" text="病人列表">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="brlb_tableview" prefHeight="218.0" prefWidth="598.0">
+                                <columns>
+                                  <TableColumn fx:id="brlb_ghbh" prefWidth="124.0" text="挂号编号" />
+                                  <TableColumn fx:id="brlb_brmc" prefWidth="123.0" text="病人名称" />
+                                    <TableColumn fx:id="brlb_ghrq" prefWidth="248.0" text="挂号日期" />
+                                    <TableColumn fx:id="brlb_hzlb" prefWidth="102.0" text="号种类别" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="table_srlb" onSelectionChanged="#click_srlb" text="收入列表">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="162.0" prefWidth="600.0">
+                           <children>
+                              <TableView fx:id="srlb_tableview" prefHeight="216.0" prefWidth="600.0">
+                                <columns>
+                                  <TableColumn fx:id="srlb_ksmc" prefWidth="121.0" text="科室名称" />
+                                  <TableColumn fx:id="srlb_ysbh" prefWidth="95.0" text="医生编号" />
+                                    <TableColumn fx:id="srlb_ysmc" prefWidth="98.0" text="医生名称" />
+                                    <TableColumn fx:id="srlb_hzlb" prefWidth="110.0" text="号种类别" />
+                                    <TableColumn fx:id="srlb_ghrc" prefWidth="87.0" text="挂号人次" />
+                                    <TableColumn fx:id="srlb_srhj" prefWidth="88.0" text="收入合计" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <Label fx:id="text_qssj" layoutX="28.0" layoutY="269.0" text="起始时间" visible="false" />
+            <Label fx:id="text_zzsj" layoutX="28.0" layoutY="301.0" text="终止时间" visible="false" />
+            <TitledPane animated="false" layoutX="96.0" layoutY="144.0" prefHeight="176.0" prefWidth="262.0" text="提示" visible="false">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="tips_label" layoutX="2.0" layoutY="42.0" prefHeight="48.0" prefWidth="256.0" text="text">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="tips_yes" layoutX="105.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#click_tips_yes" text="确定" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <Label fx:id="label_qssj" disable="true" layoutX="96.0" layoutY="265.0" prefHeight="28.0" prefWidth="226.0" text="Label" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_zzsj" disable="true" layoutX="96.0" layoutY="297.0" prefHeight="28.0" prefWidth="226.0" text="Label" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
